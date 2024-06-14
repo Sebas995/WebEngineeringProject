@@ -1,0 +1,37 @@
+body{
+    background-color: rgba(134, 134, 123, 0.726);
+}
+
+#container{
+    width: 95%;
+    height: 1200px;
+    background-color: red;
+    margin: auto;
+    padding: 2em;
+}
+
+#header{
+    width: 95%;
+    height: 100px;
+    background-color: antiquewhite;
+}
+
+#menu{
+    width: 95%;
+    height: 100px;
+    background-color: aquamarine;
+}
+
+#index{
+    width: 95%;
+    height: 800px;
+    background-color: rebeccapurple;
+}
+
+#footer{
+    width: 95%;
+    height: 100px;
+    background-color: cyan;
+}
+
+
