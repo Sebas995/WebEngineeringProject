@@ -3,50 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vender</title>
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/body.css" >
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<style>
-body{
-    background-color: antiquewhite;
-}
-#contenedor{
-    width: 1600px;
-    height:  1050px;
-    background-color: peachpuff;
-    margin: auto;
-    padding: 6em;
-
-}
-
-#encabezado{
-    width: 1300px;
-    height:  100px;
-    background-color: palevioletred;
-    
-}
-#menu{
-    width: 1300px;
-    height:  100px;
-    background-color: rgb(130, 50, 77);
-    
-}
-
-#contenido{
-    width: 1300px;
-    height:  800px;
-    background-color: rgb(225, 150, 64);
-    
-}
-#pie{
-    width: 1300px;
-    height:  80px;
-    background-color: rgb(149, 87, 17);
-    
-}
-</style>
-
 </head>
 <body>
 <div id="contenedor">
@@ -60,17 +20,18 @@ body{
                 <br><br>
 
                     <ul id="button">
-                        <li> <a href="../index.html">INICIO</a>
-                        <li> <a href="../paginas/COMPRAR.html">COMPRAR LIBROS</a>
-                        <li> <a href="../paginas/VENDER.html">VENDER LIBROS</a>
-                        <li> <a href="#">DONAR LIBROS</a>
-                        <li> <a href="../paginas/COMO.html">COMO CONTACTARNOS</a>
+                        <li> <a href="../index.php">INICIO</a>
+                            <li> <a href="./comprar.php">COMPRAR LIBROS</a>
+                            <li> <a href="#">VENDER LIBROS</a>
+                            <li> <a href="./donar.php">DONAR LIBROS</a>
+                            <li> <a href="./contactenos.php">COMO CONTACTARNOS</a>
                     </ul>
         </div>
         <br>
         <div id="contenido">
+            <form action="">
 
-
+            </form>
         </div> 
 <br>
         <div id="pie">

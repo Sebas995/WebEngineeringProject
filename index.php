@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inicio</title>
     <link rel="stylesheet" href="./css/body.css" >
     <link rel="stylesheet" href="./css/menu.css" >
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -18,19 +18,21 @@
         <br>            
         <div id="menu">
                     <br><br>
-
                         <ul id="button">
                             <li> <a href="#">INICIO</a>
-                            <li> <a href="./paginas/COMPRAR.html">COMPRAR LIBROS</a>
-                            <li> <a href="./paginas/VENDER.html">VENDER LIBROS</a>
-                            <li> <a href="./paginas/DONAR.html">DONAR LIBROS</a>
-                            <li> <a href="">COMO CONTACTARNOS</a>
+                            <li> <a href="./paginas/comprar.php">COMPRAR LIBROS</a>
+                            <li> <a href="./paginas/vender.php">VENDER LIBROS</a>
+                            <li> <a href="./paginas/donar.php">DONAR LIBROS</a>
+                            <li> <a href="./paginas/contactenos.php">COMO CONTACTARNOS</a>
                         </ul>
             </div>
             <br>
             <div id="contenido">
 
-
+            </form>
+                <?php
+                    echo"<b>hola bienvenidos</b>";
+                ?>
             </div> 
             <br>
             <div id="pie">

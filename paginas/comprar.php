@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/body.css" >
+    <title>Comprar</title>
     <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/body.css" >
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
@@ -20,11 +20,11 @@
                 <br><br>
 
                     <ul id="button">
-                        <li> <a href="../index.html">INICIO</a>
-                        <li> <a href="../paginas/COMPRAR.html">COMPRAR LIBROS</a>
-                        <li> <a href="../paginas/VENDER.html">VENDER LIBROS</a>
-                        <li> <a href="../paginas/DONAR.html">DONAR LIBROS</a>
-                        <li> <a href="">COMO CONTACTARNOS</a>
+                        <li> <a href="../index.php">INICIO</a>
+                            <li> <a href="#">COMPRAR LIBROS</a>
+                            <li> <a href="./vender.php">VENDER LIBROS</a>
+                            <li> <a href="./donar.php">DONAR LIBROS</a>
+                            <li> <a href="./contactenos.php">COMO CONTACTARNOS</a>
                     </ul>
         </div>
         <br>
