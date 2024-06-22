@@ -25,12 +25,12 @@ class Publicacion {
         $startDB->CloseDB($conn); 
     }
 
-    public function ObtenerPublicacionPorCategoria($categoria_id) {
+    public function ObtenerPublicacionesPorCategoria($categoria_id) {
         $startDB = new DB();
 
         $conn = $startDB->StartDB();
 
-        $stmt = $conn->prepare("SELECT * FROM publicacion WHERE categoria_id = ? LIMit 1;");
+        $stmt = $conn->prepare("SELECT * FROM publicacion WHERE categoria_id = ?;");
         $stmt->bind_param("", $categoria_id);
 
         $stmt->execute();
@@ -38,12 +38,13 @@ class Publicacion {
         $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
+            $publicaciones = array();
             while ($row = $result->fetch_assoc()) {
-                $_SESSION["publicacion"] = $row;
+                $publicaciones[] = $row;
             }
-        } else {
-            $_SESSION["publicacion_no_encontrada"]= "Publicacion no encontrada.";
-        }
+
+            $_SESSION["publicaciones"] = $publicaciones;
+        } 
 
         $stmt->close();
         $startDB->CloseDB($conn); 
