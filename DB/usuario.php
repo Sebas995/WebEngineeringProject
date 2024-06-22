@@ -1,12 +1,12 @@
 <?php
 
 class Usuario {
-    function ObtenerUsuario($id)  {
+    public function ObtenerUsuario($id)  {
         $startDB = new DB();
 
         $conn = $startDB->StartDB();
 
-        $stmt = $conn->prepare("SELECT * FROM usuario WHERE id = ?;");
+        $stmt = $conn->prepare("SELECT * FROM usuario WHERE id = ? LIMIT 1;");
         $stmt->bind_param("", $id);
 
         $stmt->execute();
@@ -25,7 +25,7 @@ class Usuario {
         $startDB->CloseDB($conn); 
     }
 
-    function GuardarUsuario($nombres, $apellidos, $correo, $contrasena)  {
+    public function GuardarUsuario($nombres, $apellidos, $correo, $contrasena)  {
         $startDB = new DB();
 
         $conn = $startDB->StartDB();
@@ -45,7 +45,7 @@ class Usuario {
         $startDB->CloseDB($conn); 
     }
 
-    function ActualizarUsuario($id, $nombres, $apellidos, $correo, $contrasena)  {
+    public function ActualizarUsuario($id, $nombres, $apellidos, $correo, $contrasena)  {
         $startDB = new DB();
 
         $conn = $startDB->StartDB();
@@ -65,7 +65,7 @@ class Usuario {
         $startDB->CloseDB($conn); 
     }
 
-    function ActualizarUltimoIngreso($id)  {
+    public function ActualizarUltimoIngreso($id)  {
         $startDB = new DB();
 
         $conn = $startDB->StartDB();
@@ -81,8 +81,7 @@ class Usuario {
         $startDB->CloseDB($conn); 
     }
 
-
-    function EliminarUsuario($id)  {
+    public function EliminarUsuario($id)  {
         $startDB = new DB();
 
         $conn = $startDB->StartDB();
