@@ -1,19 +1,33 @@
 <?php
 
-$user="root";
-$pass="";
-$server="localhost";
-$db="ecomerse";
+class DB {
+    private $user;
+    private $pass;
+    private $server;
+    private $db;
 
-$mysqli = new mysqli($server, $user, $pass, $db);
+    function __construct($user ="root", $pass = "", $server= "localhost", $db = "ecomerse") {
+        $this->user = $user;
+        $this->pass = $pass;
+        $this->server = $server;
+        $this->db = $db;
+    }
 
-if ($mysqli->connect_error) {
+    function StartDB() {
+        $conn = new mysqli($this->server, $this->user, $this->pass, $this->db);
+        
+        if ($conn->connect_error) {
+        
+            echo"fallo hermano";
+        }
+        else {
+            echo"funciono hermano";
+        }
+        
+        return $conn;
+    }
 
-    echo"fallo hermano";
+    function CloseDB($conn) {
+        $conn->close();
+    }
 }
-else {
-    echo"funciono hermano";
-}
-
-$mysqli->close();
-
