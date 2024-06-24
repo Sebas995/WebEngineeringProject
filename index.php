@@ -1,51 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <link rel="stylesheet" href="./css/body.css" >
-    <link rel="stylesheet" href="./css/menu.css" >
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Librería_Sisiescontigo</title>
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    <div id="contenedor">
-        <div id="encabezado">
-            <center>
-            <img src="./imagenes/titulo.jpg" width="23%">
-            </center>
-        </div>  
-        <br>            
-        <div id="menu">
-                    <br><br>
-                        <ul id="button">
-                            <li> <a href="#">INICIO</a>
-                            <li> <a href="./paginas/comprar.php">COMPRAR LIBROS</a>
-                            <li> <a href="./paginas/vender.php">VENDER LIBROS</a>
-                            <li> <a href="./paginas/donar.php">DONAR LIBROS</a>
-                            <li> <a href="./paginas/contactenos.php">COMO CONTACTARNOS</a>
-                        </ul>
-            </div>
-            <br>
-            <div id="contenido">
+    <header>
+        <div class="container">
+            <p class="logo">Librería_Sisiescontigo</p>
+            <nav>
+                <a href="#Todos-a-le">Inicio</a>
+                <a href="#recomendaciones">Catálogo</a>
+                <a href="#caracteristicas">Como Contactarnos </a>
 
-            </form>
-                <?php
-                    echo"<b>hola bienvenidos</b>";
-                ?>
-            </div> 
-            <br>
-            <div id="pie">
-                <center>
-                    <font color="white"> 
-                Búscanos en las redes sociales  como : @Librería_Sisiescontigo <br>
-                Whatsapp : 302 40982820 <br>
-                LibreriaSisiescontigo@gmail.com  <br>
-                Bogota_Colombia <br>
-                </font>
-                </center>
-            </div>
+            </nav>
+        </div>
+    </header>
 
-    </div> 
+    <section id="hero">
+        <h1>"Nunca es demasiado tarde para ser sabio".<br>Robinson Crusoe, de Daniel Defoe.</h1>
+    </section>
+
+    <section id="Todos-a-le">
+        <div class="container">
+            <div class="img-container"></div>
+            <div class="texto">
+
+                <h2>Todos a <span class="color-acento">Leer!</span></h2>
+                <p>Con la ayuda de nuestra plataforma, podrás encontrar ese libro que tanto buscas o deshacerte de aquellos que ya no necesitas. ¡No esperes más y únete a nuestra comunidad de amantes de la lectura en Si, si es contigo! juntos podemos hacer que la magia de los libros llegue a más personas. ¡Compra, vende y comparte tus libros con nosotros!
+                    
+            </div>
+        </div>
+    </section>
+
+    <section id="recomendaciones">
+        <div class="container">
+            <h2>Recomendaciones</h2>
+            <div class="programas">
+                <div class="carta">
+                    <h3>Juvenil</h3>
+                    <br>
+                    <p>¿Te gusta el misterio, la fantasía y el romance? Aquí encontrarás una amplia variedad de libros para adolescentes que harán volar tu imaginación, además de libros juveniles de no ficción para estar al tanto de los temas más actuales.</p>
+                    <button>+ Info</button>
+                </div>
+                <div class="carta">
+                    <h3>Para Peques</h3>
+                    <br>
+                    <p>Los mejores libros para los más pequeños. Aprende y diviértete con la literatura clasica...Ademas encontrarás cuentos, libros con actividades, para colorear, con pegatinas, sonidos, texturas ¡y mucho más!</p>
+                    <button>+ Info</button>
+                </div>
+                <div class="carta">
+                    <h3>Clasicos</h3>
+                    <BR></BR>
+                    <p>«En un lugar de la Mancha, de cuyo nombre no quiero acordarme…»
+                        Es difícil no reconocer esta frase, ¿verdad? Seas o no lector, hay algunos libros indispensables que nunca fallan a la hora de encontrar un buen regalo: los grandes clásicos de la literatura. Su impronta ha quedado marcada tanto en la gran pantalla como en miles de referencias en cómics, series y otras narrativas.</p>
+                    <button>+ Info</button>
+                </div>  
+            </div>
+        </div>
+    </section>
+
+    <section id="caracteristicas">
+        <div class="container">
+            <ul>
+                <li>💻​ @Librería_Sisiescontigo</li>
+                <li>☎️​ 3024098280</li>
+                <li>🌎​ Bogota_Colombia</li>
+                <li>​💬 LibreriaSisiescontigo@gmail.com</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="final">
+        <h2>Nunca es tarde para leer un buen libro</h2>
+        <button>COMIENZA YA!</button>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Laura_ Juan</p>
+        </div>
+    </footer>
 </body>
 </html>
