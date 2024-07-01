@@ -89,7 +89,7 @@ header a:hover{
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
     )
-    ,url("Imagenes/inicio.jpg");
+    ,url("../imagenes/inicio.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -251,7 +251,7 @@ footer .container{
     }
 
     #Todos-a-le .img-container{
-        background-image: url("Imagenes/libro\ uno.jpg");
+        background-image: url("../imagenes/libro\ uno.jpg");
         background-size: cover;
         background-position: center center;
         height: 500px;
@@ -291,7 +291,7 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("Imagenes/juvenil.jpg");
+        ,url("../imagenes/juvenil.jpg");
 
     }
 
@@ -301,7 +301,7 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("Imagenes/infantil.jpg");
+        ,url("../imagenes/infantil.jpg");
     }
 
     .carta:nth-child(3){
@@ -310,7 +310,7 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("Imagenes/clasicos.jpg");
+        ,url("../imagenes/clasicos.jpg");
 
     }
 

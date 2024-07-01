@@ -81,7 +81,7 @@ class Publicacion {
 
         $fecha_creacion = date('Y-m-d H:i:s');
 
-        $stmt = $conn->prepare("INSERT INTO publicacion (nombre, descripcion, imagen, precio, precio, cantidad, usuario_id, categoria_id, creacion) VALUES (?,?,?,?,?,?,?,?,?);");
+        $stmt = $conn->prepare("INSERT INTO publicacion (nombre, descripcion, imagen, precio, cantidad, usuario_id, categoria_id, creacion) VALUES (?,?,?,?,?,?,?,?,?);");
         $stmt->bind_param("", $nombre, $descripcion, $imagen, $precio, $cantidad, $usuario_id, $categoria_id, $fecha_creacion);
 
         if ($stmt->execute()) {

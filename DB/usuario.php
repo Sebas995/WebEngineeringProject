@@ -38,7 +38,7 @@ class Usuario {
         if ($stmt->execute()) {
             $_SESSION["usuario_creado"] = "Nuevo usuario insertado correctamente.";
         } else {
-            $_SESSION["error_crear_usuario"]= "Error al insertar usuario: " . $stmt->error;
+            $_SESSION["error_crear_usuario"] = "Error al insertar usuario: " . $stmt->error;
         }
 
         $stmt->close();
