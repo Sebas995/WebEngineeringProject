@@ -1,13 +1,14 @@
 <?php
+session_start();
 
 class Usuario {
-    public function ObtenerUsuario($id)  {
+    public function ObtenerUsuario($correo, $contrasena)  {
         $startDB = new DB();
 
         $conn = $startDB->StartDB();
 
-        $stmt = $conn->prepare("SELECT * FROM usuario WHERE id = ? LIMIT 1;");
-        $stmt->bind_param("", $id);
+        $stmt = $conn->prepare("SELECT * FROM usuario WHERE correo = ? AND contrasena = ? LIMIT 1;");
+        $stmt->bind_param("", $correo, $contrasena);
 
         $stmt->execute();
         

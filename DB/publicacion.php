@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 class Publicacion {
     public function ObtenerPublicacion($id) {

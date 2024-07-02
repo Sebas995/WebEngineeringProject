@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 class Compra {
     public function ObtenerCompra($id) {
@@ -49,40 +50,20 @@ class Compra {
         $startDB->CloseDB($conn); 
     }
 
-    public function GuardarCompra($publicacion_id, $usuario_id, $estado_id, $cantidad)  {
+    public function GuardarCompra($publicacion_id, $usuario_id, $estado, $cantidad)  {
         $startDB = new DB();
 
         $conn = $startDB->StartDB();
 
         $fecha_creacion = date('Y-m-d H:i:s');
 
-        $stmt = $conn->prepare("INSERT INTO compra (publicacion_id, usuario_id, estado_id, cantidad, creacion) VALUES (?,?,?,?,?);");
-        $stmt->bind_param("", $publicacion_id, $usuario_id, $estado_id, $cantidad, $fecha_creacion);
+        $stmt = $conn->prepare("INSERT INTO compra (publicacion_id, usuario_id, estado, cantidad, creacion) VALUES (?,?,?,?,?);");
+        $stmt->bind_param("", $publicacion_id, $usuario_id, $estado, $cantidad, $fecha_creacion);
 
         if ($stmt->execute()) {
             $_SESSION["compra_creada"] = "Nueva compra insertada correctamente.";
         } else {
             $_SESSION["error_crear_compra"]= "Error al insertar compra: " . $stmt->error;
-        }
-
-        $stmt->close();
-        $startDB->CloseDB($conn); 
-    }
-
-    public function ActualizarCompra($id, $publicacion_id, $usuario_id, $estado, $cantidad)  {
-        $startDB = new DB();
-
-        $conn = $startDB->StartDB();
-
-        $fecha_creacion = date('Y-m-d H:i:s');
-
-        $stmt = $conn->prepare("UPDATE compra SET publicacion_id = ?, usuario_id = ?, estado = ?, cantidad = ?, modificacion = ? WHERE id = ?;");
-        $stmt->bind_param("", $publicacion_id, $usuario_id, $estado, $cantidad, $fecha_creacion);
-
-        if ($stmt->execute()) {
-            $_SESSION["compra_actualizada"] = "Compra actualizada correctamente.";
-        } else {
-            $_SESSION["error_actualizar_compra"]= "Error al actualizar compra: " . $stmt->error;
         }
 
         $stmt->close();
