@@ -9,9 +9,12 @@
         <div class="container">
             <p class="logo">Librería_Sisiescontigo</p>
             <nav>
-                <a href="#Todos-a-le">Inicio</a>
-                <a href="#recomendaciones">Catálogo</a>
-                <a href="#caracteristicas">Como Contactarnos </a>
+                <a href="#Todos-a-leer">Inicio</a>
+                <a href="./paginas/catalogo.php">Catálogo</a>
+                <a href="#como-contactarnos">Como Contactarnos </a>
+                    <ul id="button">
+                          <li> <a href="../OPCION 2/inicio.html">Iniciar Sesion</a>
+                    </ul>
 
             </nav>
         </div>
@@ -21,7 +24,7 @@
         <h1>"Nunca es demasiado tarde para ser sabio".<br>Robinson Crusoe, de Daniel Defoe.</h1>
     </section>
 
-    <section id="Todos-a-le">
+    <section id="Todos-a-leer">
         <div class="container">
             <div class="img-container"></div>
             <div class="texto">
@@ -41,26 +44,32 @@
                     <h3>Juvenil</h3>
                     <br>
                     <p>¿Te gusta el misterio, la fantasía y el romance? Aquí encontrarás una amplia variedad de libros para adolescentes que harán volar tu imaginación, además de libros juveniles de no ficción para estar al tanto de los temas más actuales.</p>
-                    <button>+ Info</button>
+                    <button>
+                        <a href="../OPCION 2/juvenil.html">+ Info</a>
+                    </button>
                 </div>
                 <div class="carta">
                     <h3>Para Peques</h3>
                     <br>
                     <p>Los mejores libros para los más pequeños. Aprende y diviértete con la literatura clasica...Ademas encontrarás cuentos, libros con actividades, para colorear, con pegatinas, sonidos, texturas ¡y mucho más!</p>
-                    <button>+ Info</button>
+                    <button>
+                        <a href="../OPCION 2/peques.html">+ Info</a>
+                    </button>
                 </div>
                 <div class="carta">
                     <h3>Clasicos</h3>
                     <BR></BR>
                     <p>«En un lugar de la Mancha, de cuyo nombre no quiero acordarme…»
                         Es difícil no reconocer esta frase, ¿verdad? Seas o no lector, hay algunos libros indispensables que nunca fallan a la hora de encontrar un buen regalo: los grandes clásicos de la literatura. Su impronta ha quedado marcada tanto en la gran pantalla como en miles de referencias en cómics, series y otras narrativas.</p>
-                    <button>+ Info</button>
+                    <button>
+                        <a href="../OPCION 2/clasicos.html">+ Info</a>
+                    </button>
                 </div>  
             </div>
         </div>
     </section>
 
-    <section id="caracteristicas">
+    <section id="como-contactarnos">
         <div class="container">
             <ul>
                 <li>💻​ @Librería_Sisiescontigo</li>
@@ -73,7 +82,10 @@
 
     <section id="final">
         <h2>Nunca es tarde para leer un buen libro</h2>
-        <button>COMIENZA YA!</button>
+        <button>
+            <a href="../OPCION 2/inicio.html">Comienza Ahora</a>
+            
+        </button>
     </section>
 
     <footer>
@@ -81,5 +93,6 @@
             <p>&copy; Laura_ Juan</p>
         </div>
     </footer>
+  
 </body>
 </html>

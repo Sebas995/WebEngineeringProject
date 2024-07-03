@@ -11,15 +11,15 @@ body{
     margin: 0;
 }
 
-h1{ font-size: 3.5em;}
+h1{ font-size: 9.5em;}
 h2{ font-size: 2.7em;}
 h3{ font-size: 2em;}
 p{ font-size: 1.25em;}
 ul{ list-style: none;}
-li{ font-size: 1.25em;}
+li{ font-size: 1.20em;}
 
 button{
-    font-size: 1.25em;
+    font-size: 1.65em;
     font-weight: bold;
     padding: 10px 30px;
     border-radius: 5px;
@@ -27,6 +27,7 @@ button{
     box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
     color: white;
     background-color: rgb(226, 137, 43);
+
 }
 
 button:hover{
@@ -34,7 +35,7 @@ button:hover{
 }
 
 .container{
-    max-width: 1400px;
+    max-width: 1600px;
     margin: auto;
 }
 
@@ -47,10 +48,10 @@ header{
 
 header .logo{
     margin: 0;
-    padding: 25px 30px;
+    padding: 22px 20px;
     font-weight: bold;
     color: rgb(172, 19, 227);
-    font-size: 1.9em;
+    font-size: 1.8em;
 }
 
 header .container{
@@ -63,11 +64,11 @@ header nav{
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding-bottom: 25px;
+    padding-bottom: 100px;
 }
 
 header a{
-    padding: 5px 12px;
+    padding: 17px 13px;
     text-decoration: none;
     font-weight: bold;
     color: black;
@@ -89,7 +90,7 @@ header a:hover{
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
     )
-    ,url("../imagenes/inicio.jpg");
+    ,url("Imagenes/inicio.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -100,10 +101,10 @@ header a:hover{
 }
 
 #hero button{
-    font-size: 1.75em;
+    font-size: 1.95em;
 }
 
-#Todos-a-   le.container{
+#Todos-a-leer.container{
     text-align: center;
     padding: 200px 12px;
 }
@@ -115,7 +116,7 @@ header a:hover{
 }
 
 #recomendaciones .container{
-    padding: 150px 12px;
+    padding: 80px 10px;
 }
 
 #recomendaciones h2{
@@ -164,13 +165,13 @@ header a:hover{
 
 }
 
-#caracteristicas .container{
+#como-contactarnos .container{
     text-align: center;
-    padding: 250px 12px;
+    padding: 100px 12px;
 }
 
-#caracteristicas li{
-    margin: 16px 0px;
+#como-contactarnos li{
+    margin: 14px 0px;
     font-weight: bold;
 }
 
@@ -204,7 +205,7 @@ footer p{
 }
 
 footer .container{
-    height: 150px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -231,12 +232,12 @@ footer .container{
         font-size: 5em;
     }
 
-    #Todos-a-le .container{
+    #Todos-a-leer .container{
         display: flex;
         justify-content: space-evenly;
     }
 
-    #Todos-a-le .texto{
+    #Todos-a-leer .texto{
         width: 50%;
         max-width: 600px;
         text-align: initial;
@@ -246,12 +247,12 @@ footer .container{
         justify-content: center;
     }
 
-    #Todos-a-le h2{
+    #Todos-a-leer h2{
         margin-top: 0px;
     }
 
-    #Todos-a-le .img-container{
-        background-image: url("../imagenes/libro\ uno.jpg");
+    #Todos-a-leer .img-container{
+        background-image: url("Imagenes/libro\ uno.jpg");
         background-size: cover;
         background-position: center center;
         height: 500px;
@@ -291,7 +292,7 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("../imagenes/juvenil.jpg");
+        ,url("Imagenes/juvenil.jpg");
 
     }
 
@@ -301,7 +302,7 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("../imagenes/infantil.jpg");
+        ,url("Imagenes/infantil.jpg");
     }
 
     .carta:nth-child(3){
@@ -310,18 +311,18 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("../imagenes/clasicos.jpg");
+        ,url("Imagenes/clasicos.jpg");
 
     }
 
-    #caracteristicas{
-        background-image: url("media/background-2.jpeg");
+    #como-contactarnos{
+        background-image: url("Imagenes/contacto.jpg");
         background-repeat: no-repeat;
-        background-size: 500px 400px;
-        background-position: calc(100vw - 500px) 120px;
+        background-size: 300px 200px;
+        background-position: calc(90vw - 400px) 90px;
     }
 
-    #caracteristicas .container{
+    #como-contactarnos .container{
         text-align: initial;
     }
 
