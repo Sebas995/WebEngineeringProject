@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once("conexion.php");
 
 class Usuario {
@@ -35,7 +34,7 @@ class Usuario {
         $fecha_creacion = date('Y-m-d H:i:s');
 
         $stmt = $conn->prepare("INSERT INTO usuario (nombres, apellidos, correo, contrasena, creacion) VALUES (?,?,?,?,?);");
-        $stmt->bind_param("", $nombres,$apellidos, $correo, $contrasena, $fecha_creacion);
+        $stmt->bind_param("sssss", $nombres ,$apellidos, $correo, $contrasena, $fecha_creacion);
 
         if ($stmt->execute()) {
             $_SESSION["usuario_creado"] = "Nuevo usuario insertado correctamente.";

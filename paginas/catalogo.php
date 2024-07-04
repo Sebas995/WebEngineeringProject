@@ -19,7 +19,7 @@
                     if (isset($_SESSION["usuario"])){
                         echo '<a href="../php/cerrar_sesion.php">Cerrar Sesion</a>';
                     } else {
-                        echo '<a href="/inicio.php">Iniciar Sesion</a>';
+                        echo '<a href="../paginas/inicio.php">Iniciar Sesion</a>';
                     }
                 ?>
         </div>
@@ -53,11 +53,12 @@
                             echo ' 
                                 <form action="../php/comprar_producto.php" method="POST">
                                             <div class="card">
+                                            <p class="card-text">Cantidad:'.$publicacion["cantidad"].'</p>
                                             <img src="'.$imagen_data_url.'" class="card-img-top" alt="...">
                                             <div class="card-body">
                                                 <h5 class="card-title">'.$publicacion["nombre"].'</h5>
                                                 <p class="card-text">'.$publicacion["descripcion"].'</p>
-                                                <p class="card-text"><small class="text-muted">$'.number_format($publicacion["precio"]).'<input type="submit" value="Comprar" class="btn"></small></p>
+                                                <p class="card-text"><small class="text-muted">$'.number_format($publicacion["precio"]).'</small><input type="submit" value="Comprar" class="btn"></p>
                                             </div>
                                             </div> 
                                     <input type="input" id="publicacion_id" value="$'.$publicacion["id"].'" hidden>
@@ -72,12 +73,13 @@
                             $imagen_data_url = "data:$tipo_imagen;base64,$imagen_codificada";
                             echo ' <form action="../php/comprar_producto.php" method="POST">
                                             <div class="card">
+                                            <p class="card-text">Cantidad:'.$publicacion["cantidad"].'</p>
                                             <img src="'.$imagen_data_url.'" class="card-img-top" alt="...">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">'.$publicacion["nombre"].'</h5>
-                                                    <p class="card-text" style="overflow:hidden">'.$publicacion["descripcion"].'</p>
-                                                    <p class="card-text"><small class="text-muted">$'.number_format($publicacion["precio"]).'</small><input type="submit" value="Comprar" class="btn"></p>
-                                                </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">'.$publicacion["nombre"].'</h5>
+                                                <p class="card-text">'.$publicacion["descripcion"].'</p>
+                                                <p class="card-text"><small class="text-muted">$'.number_format($publicacion["precio"]).'</small><input type="submit" value="Comprar" class="btn"></p>
+                                            </div>
                                             </div> 
                                     <input type="input" id="publicacion_id" value="$'.$publicacion["id"].'" hidden>
                                 </form>';

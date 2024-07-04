@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 $nombre = $_POST["nombre"];
 $descripcion= $_POST["descripcion"]; 

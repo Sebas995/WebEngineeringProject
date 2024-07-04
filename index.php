@@ -14,11 +14,13 @@
                 <a href="./paginas/catalogo.php">Catálogo</a>
                 <a href="#como-contactarnos">Como Contactarnos </a>
                 <?php
-                        if (isset($_SESSION["usuario"])){
-                            echo '<a href="php/cerrar_sesion.php">Cerrar Sesion</a>';
-                        } else {
-                            echo '<a href="./paginas/inicio.php">Iniciar Sesion</a>';
-                        }
+                    session_start();
+
+                    if (isset($_SESSION["usuario"])){
+                        echo '<a href="../php/cerrar_sesion.php">Cerrar Sesion</a>';
+                    } else {
+                        echo '<a href="../paginas/inicio.php">Iniciar Sesion</a>';
+                    }
                 ?>
             </nav>
         </div>
