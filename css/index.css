@@ -90,7 +90,7 @@ header a:hover{
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
     )
-    ,url("Imagenes/inicio.jpg");
+    ,url("/imagenes/inicio.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -252,7 +252,7 @@ footer .container{
     }
 
     #Todos-a-leer .img-container{
-        background-image: url("Imagenes/libro\ uno.jpg");
+        background-image: url("/imagenes/nino_libro.jpg");
         background-size: cover;
         background-position: center center;
         height: 500px;
@@ -292,7 +292,7 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("Imagenes/juvenil.jpg");
+        ,url("/imagenes/juvenil.jpg");
 
     }
 
@@ -302,7 +302,7 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("Imagenes/infantil.jpg");
+        ,url("/imagenes/infantil.jpg");
     }
 
     .carta:nth-child(3){
@@ -311,12 +311,12 @@ footer .container{
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         )
-        ,url("Imagenes/clasicos.jpg");
+        ,url("/imagenes/clasicos.jpg");
 
     }
 
     #como-contactarnos{
-        background-image: url("Imagenes/contacto.jpg");
+        background-image: url("/imagenes/contacto.jpg");
         background-repeat: no-repeat;
         background-size: 300px 200px;
         background-position: calc(90vw - 400px) 90px;

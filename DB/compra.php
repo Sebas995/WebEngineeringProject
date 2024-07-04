@@ -1,5 +1,6 @@
 <?php 
 session_start();
+require_once("conexion.php");
 
 class Compra {
     public function ObtenerCompra($id) {

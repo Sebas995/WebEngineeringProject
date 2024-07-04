@@ -1,14 +1,15 @@
 <?php 
 session_start();
+require_once("conexion.php");
 
 class Categoria {
-    public function ObtenerCategoria($id)  {
+    public function ObtenerCategoria($nombre)  {
         $startDB = new DB();
 
         $conn = $startDB->StartDB();
 
-        $stmt = $conn->prepare("SELECT * FROM categoria WHERE id = ? LIMIT 1;");
-        $stmt->bind_param("", $id);
+        $stmt = $conn->prepare("SELECT * FROM categoria WHERE nombre = ? LIMIT 1;");
+        $stmt->bind_param("s", $id);
 
         $stmt->execute();
         

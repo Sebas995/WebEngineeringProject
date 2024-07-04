@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once("conexion.php");
 
 class Usuario {
     public function ObtenerUsuario($correo, $contrasena)  {
@@ -8,7 +9,7 @@ class Usuario {
         $conn = $startDB->StartDB();
 
         $stmt = $conn->prepare("SELECT * FROM usuario WHERE correo = ? AND contrasena = ? LIMIT 1;");
-        $stmt->bind_param("", $correo, $contrasena);
+        $stmt->bind_param("ss", $correo, $contrasena);
 
         $stmt->execute();
         
@@ -19,7 +20,7 @@ class Usuario {
                 $_SESSION["usuario"] = $row;
             }
         } else {
-            $_SESSION["usuario_no_encontrado"]= "Usuario no encontrado.";
+            $_SESSION["usuario_no_encontrado"] = "Usuario no encontrado.";
         }
 
         $stmt->close();

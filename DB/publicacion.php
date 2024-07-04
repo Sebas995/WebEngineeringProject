@@ -1,5 +1,6 @@
 <?php 
 session_start();
+require_once("conexion.php");
 
 class Publicacion {
     public function ObtenerPublicacion($id) {
@@ -25,6 +26,31 @@ class Publicacion {
         $stmt->close();
         $startDB->CloseDB($conn); 
     }
+
+    public function ObtenerPublicacionPorNombre($nombre) {
+        $startDB = new DB();
+
+        $conn = $startDB->StartDB();
+
+        $stmt = $conn->prepare("SELECT * FROM publicacion WHERE nombre = ? LIMit 1;");
+        $stmt->bind_param("s", $nombre);
+
+        $stmt->execute();
+        
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $_SESSION["publicacion"] = $row;
+            }
+        } else {
+            $_SESSION["publicacion_no_encontrada"]= "Publicacion no encontrada.";
+        }
+
+        $stmt->close();
+        $startDB->CloseDB($conn); 
+    }
+
 
     public function ObtenerPublicacionesPorCategoria($categoria_id) {
         $startDB = new DB();
@@ -100,10 +126,30 @@ class Publicacion {
 
         $conn = $startDB->StartDB();
 
-        $fecha_creacion = date('Y-m-d H:i:s');
+        $fecha_modificacion = date('Y-m-d H:i:s');
 
-        $stmt = $conn->prepare("UPDATE publicacion SET nombre = ?, descripcion = ?, imagen = ?, precio = ?, precio = ?, cantidad = ?, usuario_id = ?, categoria_id = ?, modificacion = ? WHERE id = ?;");
-        $stmt->bind_param("", $nombre, $descripcion, $imagen, $precio, $cantidad, $usuario_id, $categoria_id, $fecha_creacion, $id);
+        $stmt = $conn->prepare("UPDATE publicacion SET nombre = ?, descripcion = ?, imagen = ?, precio = ?, cantidad = ?, usuario_id = ?, categoria_id = ?, modificacion = ? WHERE id = ?;");
+        $stmt->bind_param("", $nombre, $descripcion, $imagen, $precio, $cantidad, $usuario_id, $categoria_id, $fecha_modificacion, $id);
+
+        if ($stmt->execute()) {
+            $_SESSION["publicacion_actualizada"] = "Publicacion actualizada correctamente.";
+        } else {
+            $_SESSION["error_actualizar_publicacion"]= "Error al actualizar publicacion: " . $stmt->error;
+        }
+
+        $stmt->close();
+        $startDB->CloseDB($conn); 
+    }
+
+    public function ActualizarCantidad($id, $cantidad)  {
+        $startDB = new DB();
+
+        $conn = $startDB->StartDB();
+
+        $fecha_modificacion= date('Y-m-d H:i:s');
+
+        $stmt = $conn->prepare("UPDATE publicacion SET cantidad = ?, modificacion = ? WHERE id = ?;");
+        $stmt->bind_param("isi", $cantidad,$fecha_modificacion, $id);
 
         if ($stmt->execute()) {
             $_SESSION["publicacion_actualizada"] = "Publicacion actualizada correctamente.";

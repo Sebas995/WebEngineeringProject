@@ -2,61 +2,92 @@
 <html lang="en">
 <head>
     <title>Librería_Sisiescontigo</title>
-    <link rel="stylesheet" href="./css/inicio.css">
+    <link rel="stylesheet" href="../css/inicio.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/catalogo.css">
+    <link rel="icon" href="https://img.freepik.com/vector-gratis/pila-libros-diseno-plano-dibujado-mano_23-2149334862.jpg?w=740&t=st=1720045562~exp=1720046162~hmac=c98e6f4bb3daf7e3e46c115a014c5d5edfc42a94526094c83b118cec285e0e4e">
 </head>
 <body>
     <header>
         <div id ="menu" class="container">
-            <p class="logo">Librería_Sisiescontigo</p>
+        <p class="logo"><a href="../index.php #Todos-a-leer">Librería_Sisiescontigo</a></p>
             <nav>
-                <a href= "../OPCION 2/index.html #Todos-a-leer">Inicio</a>
-                <a href="../OPCION 2/index.html #recomendaciones">Catálogo</a>
-                <a href="../OPCION 2/index.html #como-contactarnos">Como Contactarnos </a>
-                <a href="../OPCION 2/index.html #Iniciar-sesion">Iniciar Sesion </a>
-            
-            </nav>
+                 <a href= "../index.php #Todos-a-leer">Inicio</a>
+                <a href="#">Catálogo</a>
+                <a href="../index.php #como-contactarnos">Como Contactarnos </a>
+                <?php
+                    if (isset($_SESSION["usuario"])){
+                        echo '<a href="../php/cerrar_sesion.php">Cerrar Sesion</a>';
+                    } else {
+                        echo '<a href="/inicio.php">Iniciar Sesion</a>';
+                    }
+                ?>
         </div>
         
     </header>
 <br> <br>
             <title>Buscador Web</title>
-            <link rel="stylesheet" type="text/css" href="../OPCION 2/juvenil.css">
         </head>
         <body>
-            <form action="/buscar.php" method="GET">
-                <input type="text" name="busqueda" placeholder="Buscar aquí...">
-                <button type="submit">Buscar</button>
-            </form>
-       <br><br>
-            <div class="card-group">
-                <div class="card">
-                  <img src="../OPCION 2/Imagenes/Juvenil-1.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Todo lo que Fuimos</h5>
-                    <p class="card-text">
-                        Tú y yo besamos muchas veces otros labios, así que por eso ahora inventamos otros besos .</p>
-                    <p class="card-text"><small class="text-muted">$68.000,00</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="../OPCION 2/Imagenes/Juvenil-2.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Estuche After</h5>
-                    <p class="card-text">Un precioso estuche que reúne los cuatro primeros títulos de la exitosa serie After.</p>
-                    <p class="card-text"><small class="text-muted">$146.959,00</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="../OPCION 2/Imagenes/Juvenil-3.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Venganza para víctimas</h5>
-                    <p class="card-text">Tras Asesinato para principiantes y Desaparición para expertos, disfruta la esperada tercera novela de la nueva reina del thriller juvenil.</p>
-                    <p class="card-text"><small class="text-muted">$45.113,95</small></p>
-                  </div>
-                </div>
-              </div>     
+            <div id="container">
+                <form class="container" action="../php/obtener_publicacion.php" method="POST">
+                    <?php
+                        if (isset($_GET['buscar'])){
+                            echo '<input type="text" id="busqueda" name="busqueda" value="' . $_GET['buscar'] . '" placeholder="Buscar aquí...">';
+                        } else {
+                            echo '<input type="text" id="busqueda" name="busqueda" placeholder="Buscar aquí...">';
+                        }
+                    ?>
+                    <button type="submit">Buscar</button>
+                </form>
+                <hr>
+                <div id="container" class="card-group">
+                <?php
+                    session_start();
+                    $tipo_imagen = 'image/jpeg'; 
 
+                    if (isset($_SESSION["publicacion"])){
+                            $publicacion = $_SESSION["publicacion"];
+                            $imagen_codificada = base64_encode($publicacion["imagen"]);
+                            $imagen_data_url = "data:$tipo_imagen;base64,$imagen_codificada";
+                            echo ' 
+                                <form action="../php/comprar_producto.php" method="POST">
+                                            <div class="card">
+                                            <img src="'.$imagen_data_url.'" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <h5 class="card-title">'.$publicacion["nombre"].'</h5>
+                                                <p class="card-text">'.$publicacion["descripcion"].'</p>
+                                                <p class="card-text"><small class="text-muted">$'.number_format($publicacion["precio"]).'<input type="submit" value="Comprar" class="btn"></small></p>
+                                            </div>
+                                            </div> 
+                                    <input type="input" id="publicacion_id" value="$'.$publicacion["id"].'" hidden>
+                                </form>';
+                                unset($_SESSION["publicacion"]);
+                    }
+
+                    if (isset($_SESSION["publicaciones"])){
+                        
+                        foreach ($_SESSION["publicaciones"] as $publicaciones => $publicacion) {
+                            $imagen_codificada = base64_encode($publicacion["imagen"]);
+                            $imagen_data_url = "data:$tipo_imagen;base64,$imagen_codificada";
+                            echo ' <form action="../php/comprar_producto.php" method="POST">
+                                            <div class="card">
+                                            <img src="'.$imagen_data_url.'" class="card-img-top" alt="...">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">'.$publicacion["nombre"].'</h5>
+                                                    <p class="card-text" style="overflow:hidden">'.$publicacion["descripcion"].'</p>
+                                                    <p class="card-text"><small class="text-muted">$'.number_format($publicacion["precio"]).'</small><input type="submit" value="Comprar" class="btn"></p>
+                                                </div>
+                                            </div> 
+                                    <input type="input" id="publicacion_id" value="$'.$publicacion["id"].'" hidden>
+                                </form>';
+                        }
+                        unset($_SESSION["publicaciones"]);
+                    }
+
+
+                ?>
+            </div> 
         <section id="como-contactarnos">
             <div class="container">
                 <ul>
@@ -71,14 +102,14 @@
     <section id="final">
         <h2>Nunca es tarde para leer un buen libro</h2>
         <button>
-            <a href="../OPCION 2/inicio.html">Comienza Ahora</a>
+            <a href="../paginas/inicio.php">Comienza Ahora</a>
         
         </button>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; Laura_ Juan</p>
+            <p>&copy; Laura_Juan</p>
         </div>
     </footer>
   
