@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +11,7 @@
 <body>
     <header>
         <div id ="menu" class="container">
-        <p class="logo"><a href="../index.php #Todos-a-leer">Librería_Sisiescontigo</a></p>
+        <p class="logo"><a href="../index.php">Librería_Sisiescontigo</a></p>
             <nav>
                 <a href= "../index.php #Todos-a-leer">Inicio</a>
                 <a href="./catalogo.php">Catálogo</a>

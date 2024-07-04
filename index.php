@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +11,12 @@
 <body>
     <header>
         <div class="container">
-        <p class="logo"><a href="../index.php #Todos-a-leer">Librería_Sisiescontigo</a></p>
+        <p class="logo"><a href="../index.php">Librería_Sisiescontigo</a></p>
             <nav>
                 <a href="#Todos-a-leer">Inicio</a>
                 <a href="./paginas/catalogo.php">Catálogo</a>
                 <a href="#como-contactarnos">Como Contactarnos </a>
                 <?php
-                    session_start();
 
                     if (isset($_SESSION["usuario"])){
                         echo '<a href="../php/cerrar_sesion.php">Cerrar Sesion</a>';
