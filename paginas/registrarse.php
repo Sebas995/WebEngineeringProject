@@ -20,9 +20,11 @@
                     session_start();
 
                     if (isset($_SESSION["usuario"])){
-                        echo '<a href="../php/cerrar_sesion.php">Cerrar Sesion</a>';
+                        echo '
+                        <a href="../paginas/vender.php">Vender</a>                        
+                        <a href="../php/cerrar_sesion.php">Cerrar Sesion</a>';
                     } else {
-                        echo '<a href="./inicio.php">Iniciar Sesion</a>';
+                        echo '<a href="../paginas/inicio.php">Iniciar Sesion</a>';
                     }
                 ?>
             </nav>

@@ -9,7 +9,7 @@ class Categoria {
         $conn = $startDB->StartDB();
 
         $stmt = $conn->prepare("SELECT * FROM categoria WHERE nombre = ? LIMIT 1;");
-        $stmt->bind_param("s", $id);
+        $stmt->bind_param("s", $nombre);
 
         $stmt->execute();
         

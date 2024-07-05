@@ -19,7 +19,10 @@
                 <?php
 
                     if (isset($_SESSION["usuario"])){
-                        echo '<a href="../php/cerrar_sesion.php">Cerrar Sesion</a>';
+                        echo '
+                        <a href="../paginas/vender.php">Vender</a>
+                        <a href="../php/ver_compras.php">Mis Compras</a>                       
+                        <a href="../php/cerrar_sesion.php">Cerrar Sesion</a>';
                     } else {
                         echo '<a href="../paginas/inicio.php">Iniciar Sesion</a>';
                     }
@@ -91,7 +94,7 @@
     <section id="final">
         <h2>Nunca es tarde para leer un buen libro</h2>
         <button>
-            <a href="#">Comienza Ahora</a>
+            <a href="../paginas/inicio.php">Comienza Ahora</a>
             
         </button>
     </section>

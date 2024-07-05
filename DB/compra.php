@@ -51,6 +51,31 @@ class Compra {
         $startDB->CloseDB($conn); 
     }
 
+    public function ObtenerComprasPorUsuario($usuario_id) {
+        $startDB = new DB();
+
+        $conn = $startDB->StartDB();
+
+        $stmt = $conn->prepare("SELECT p.nombre, p.precio, c.estado, c.cantidad, c.creacion FROM compra c INNER JOIN publicacion p ON c.publicacion_id = p.id WHERE c.usuario_id = ?;");
+        $stmt->bind_param("i", $usuario_id);
+
+        $stmt->execute();
+        
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            $compras = array();
+            while ($row = $result->fetch_assoc()) {
+                $compras[] = $row;
+            }
+
+            $_SESSION["compras"] = $compras;
+        } 
+
+        $stmt->close();
+        $startDB->CloseDB($conn); 
+    }
+
     public function GuardarCompra($publicacion_id, $usuario_id, $estado, $cantidad)  {
         $startDB = new DB();
 
@@ -59,10 +84,10 @@ class Compra {
         $fecha_creacion = date('Y-m-d H:i:s');
 
         $stmt = $conn->prepare("INSERT INTO compra (publicacion_id, usuario_id, estado, cantidad, creacion) VALUES (?,?,?,?,?);");
-        $stmt->bind_param("", $publicacion_id, $usuario_id, $estado, $cantidad, $fecha_creacion);
+        $stmt->bind_param("iisis", $publicacion_id, $usuario_id, $estado, $cantidad, $fecha_creacion);
 
         if ($stmt->execute()) {
-            $_SESSION["compra_creada"] = "Nueva compra insertada correctamente.";
+            $_SESSION["compra_creada"] = "Compra realizada correctamente.";
         } else {
             $_SESSION["error_crear_compra"]= "Error al insertar compra: " . $stmt->error;
         }

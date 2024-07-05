@@ -8,8 +8,8 @@ class Publicacion {
 
         $conn = $startDB->StartDB();
 
-        $stmt = $conn->prepare("SELECT * FROM publicacion WHERE id = ? LIMit 1;");
-        $stmt->bind_param("", $id);
+        $stmt = $conn->prepare("SELECT * FROM publicacion WHERE id = ? AND cantidad > 0 LIMit 1;");
+        $stmt->bind_param("i", $id);
 
         $stmt->execute();
         
@@ -17,7 +17,7 @@ class Publicacion {
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $_SESSION["publicacion"] = $row;
+                $_SESSION["ver_publicacion"] = $row;
             }
         } else {
             $_SESSION["publicacion_no_encontrada"]= "Publicacion no encontrada.";
@@ -32,7 +32,7 @@ class Publicacion {
 
         $conn = $startDB->StartDB();
 
-        $stmt = $conn->prepare("SELECT * FROM publicacion WHERE nombre = ? LIMit 1;");
+        $stmt = $conn->prepare("SELECT * FROM publicacion WHERE nombre = ? AND cantidad > 0 LIMit 1;");
         $stmt->bind_param("s", $nombre);
 
         $stmt->execute();
@@ -57,8 +57,8 @@ class Publicacion {
 
         $conn = $startDB->StartDB();
 
-        $stmt = $conn->prepare("SELECT * FROM publicacion WHERE categoria_id = ?;");
-        $stmt->bind_param("", $categoria_id);
+        $stmt = $conn->prepare("SELECT * FROM publicacion WHERE categoria_id = ? AND cantidad > 0;");
+        $stmt->bind_param("i", $categoria_id);
 
         $stmt->execute();
         
@@ -82,7 +82,7 @@ class Publicacion {
 
         $conn = $startDB->StartDB();
 
-        $stmt = $conn->prepare("SELECT * FROM publicacion");
+        $stmt = $conn->prepare("SELECT * FROM publicacion WHERE cantidad > 0;");
 
         $stmt->execute();
         
@@ -108,8 +108,8 @@ class Publicacion {
 
         $fecha_creacion = date('Y-m-d H:i:s');
 
-        $stmt = $conn->prepare("INSERT INTO publicacion (nombre, descripcion, imagen, precio, cantidad, usuario_id, categoria_id, creacion) VALUES (?,?,?,?,?,?,?,?,?);");
-        $stmt->bind_param("", $nombre, $descripcion, $imagen, $precio, $cantidad, $usuario_id, $categoria_id, $fecha_creacion);
+        $stmt = $conn->prepare("INSERT INTO publicacion (nombre, descripcion, imagen, precio, cantidad, usuario_id, categoria_id, creacion) VALUES (?,?,?,?,?,?,?,?);");
+        $stmt->bind_param("sssiiiis", $nombre, $descripcion, $imagen, $precio, $cantidad, $usuario_id, $categoria_id, $fecha_creacion);
 
         if ($stmt->execute()) {
             $_SESSION["publicacion_creada"] = "Nueva publicacion insertada correctamente.";

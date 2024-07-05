@@ -17,10 +17,10 @@
                 <a href="./catalogo.php">Catálogo</a>
                 <a href="../index.php #como-contactarnos">Como Contactarnos </a>
                 <?php
-                    session_start();
-
                     if (isset($_SESSION["usuario"])){
-                        echo '<a href="../php/cerrar_sesion.php">Cerrar Sesion</a>';
+                        echo '
+                        <a href="../paginas/vender.php">Vender</a>
+                        <a href="../php/cerrar_sesion.php">Cerrar Sesion</a>';
                     } else {
                         echo '<a href="#">Iniciar Sesion</a>';
                     }

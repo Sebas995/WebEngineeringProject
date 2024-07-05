@@ -18,10 +18,10 @@ class DB {
         
         if ($conn->connect_error) {
         
-            echo"fallo hermano";
+            echo"fallo la DB";
         }
         else {
-            echo"funciono hermano";
+            echo"funciono la DB";
         }
         
         return $conn;
